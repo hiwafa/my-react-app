@@ -2,7 +2,7 @@ import React from 'react';
 
 interface UserType {
     message: String;
-    id: number
+    id: number;
 }
 
 function User(props: UserType) {
