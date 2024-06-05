@@ -25,6 +25,10 @@ function User(props: UserType) {
     greeting = function(name){
         return name;
     }
+
+    let sayHi = (id: number): string => {
+        return `id: ${id}`
+    }
   
   return (
     <div>
