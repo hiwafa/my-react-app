@@ -35,8 +35,28 @@ function Profile(props: ProfileTypes) {
     }
 
     let myFunc: funcTYpe = function (info, aktiv){
+        let prsn = new Person("Muhammad", "Wafa");
+        prsn.display("Called: ")
         return info;
     }
+
+
+    interface A{
+        display(value: string): void
+    }
+
+    class Person implements A {
+
+        constructor(private firstName: string, private lastName: string){
+
+        }
+
+        display(value: string): void {
+            console.log(value, this.firstName, this.lastName)
+        }
+    }
+
+
 
     return (
         <div>
