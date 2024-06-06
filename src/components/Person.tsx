@@ -21,11 +21,13 @@ class Person  {
 }
 
 
-
+type fruitTypes = 'Apple' | 'Banana' | 'Mango' | 'Avocado' | 'Orange'
 
 export default ()=> {
 
     const person: PersonType = new Person(1, 'Wafa')
+
+    const fruits: fruitTypes = 'Apple';
 
     return (
         <div>
