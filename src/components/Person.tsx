@@ -20,18 +20,37 @@ class Person  {
     }
 }
 
-
+// types: string, number, boolean, bigint, undefined, null, symbol
 type fruitTypes = 'Apple' | 'Banana' | 'Mango' | 'Avocado' | 'Orange'
+type numberTypes = 10 | 20 | 30 | 50 | 100;
+
+// Generics
+type stringArrayType = Array<string>;
+type numberArrayType = Array<number>;
+
+
+// Interface With Generic
+interface MainType <SubType1, SubType2> {
+   value1: SubType1;
+   value2: SubType2;
+}
 
 export default ()=> {
 
-    const person: PersonType = new Person(1, 'Wafa')
+    const person: PersonType = new Person(1, 'Wafa');
 
-    const fruits: fruitTypes = 'Apple';
+    const fruit: fruitTypes = 'Apple';
+    const number: numberTypes = 100;
+    const myArray: numberArrayType = [39939, 3992];
+
+
+    let display  =  (obj: MainType<number, string>) => {
+        return `${obj.value1} - ${obj.value2}`
+    }
 
     return (
         <div>
-            {person.show()}
+            {person.show()} - {display({value1: 999, value2: 'Hi'})}
         </div>
     );
 }
