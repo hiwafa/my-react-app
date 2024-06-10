@@ -48,7 +48,7 @@ export default () => {
         return `${obj.value1} - ${obj.value2}`
     }
 
-    //  Multi types array
+    //  union types array
     let scores: (string | number)[] = [399, 'Hi dear', 'How are you', 999];
 
     // Tuple Types
@@ -75,6 +75,12 @@ export default () => {
         }
     }
 
+    // union type
+    let unionType: string | number | boolean;
+    unionType = 400;
+    unionType = 'Hi dear';
+    unionType = true;
+    // unionType = undefined; // error
 
 
     return (
