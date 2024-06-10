@@ -102,11 +102,19 @@ export default () => {
 
         return a;
     }
+
+
+    // TypeScript Rest Parameters
+    let resParamFunc = (...rest: number[])=> {
+        let allVal = rest.reduce((a, b)=> a+b);
+
+        return allVal;
+    }
     
     return (
         <div>
             {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
-            {constantsValue.May} {constantsValue.Jul} - {add(9, 100)}
+            {constantsValue.May} {constantsValue.Jul} - {add(9, 100)} - {resParamFunc(5, 3, 2, 99, 11)}
         </div>
     );
 }
