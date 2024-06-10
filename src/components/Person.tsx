@@ -111,6 +111,9 @@ export default () => {
         return allVal;
     }
     
+
+    // TypeScript Function Overloadings (next lesson)
+
     return (
         <div>
             {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
