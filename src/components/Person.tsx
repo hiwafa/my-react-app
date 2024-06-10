@@ -48,9 +48,27 @@ export default ()=> {
         return `${obj.value1} - ${obj.value2}`
     }
 
+    //  Multi types array
+    let scores: (string|number)[] = [399, 'Hi dear', 'How are you', 999];
+
+    // Tuple Types
+    let skills: [string, number, boolean];
+    skills = ['33', 99, false];
+
+    // enum
+    enum constantsValue { Jan, Feb, Mar, Apr, May, Jun, Jul};
+
+    // any type
+    let anyType: any; anyType = {a: '3333', b: 999};
+
+    // void type
+    let useless: void; useless = undefined;
+
+
     return (
         <div>
-            {person.show()} - {display({value1: 999, value2: 'Hi'})}
+            {person.show()} - {display({value1: 999, value2: 'Hi'})} - {scores[1]} - {skills[1]} <br/>
+            {constantsValue.May} {constantsValue.Jul} 
         </div>
     );
 }
