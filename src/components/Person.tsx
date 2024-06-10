@@ -1,21 +1,21 @@
 
 
-interface PersonType{
+interface PersonType {
     personId: number;
     personName: string;
     show(): string;
 }
 
-class Person  {
+class Person {
     personId: number = 0;
     personName: string = "";
 
-    constructor(personId: number, personName: string){
+    constructor(personId: number, personName: string) {
         this.personId = personId;
         this.personName = personName;
     }
 
-    public show(): string{
+    public show(): string {
         return `${this.personId} - ${this.personName}`;
     }
 }
@@ -30,12 +30,12 @@ type numberArrayType = Array<number>;
 
 
 // Interface With Generic
-interface MainType <SubType1, SubType2> {
-   value1: SubType1;
-   value2: SubType2;
+interface MainType<SubType1, SubType2> {
+    value1: SubType1;
+    value2: SubType2;
 }
 
-export default ()=> {
+export default () => {
 
     const person: PersonType = new Person(1, 'Wafa');
 
@@ -44,31 +44,43 @@ export default ()=> {
     const myArray: numberArrayType = [39939, 3992];
 
 
-    let display  =  (obj: MainType<number, string>) => {
+    let display = (obj: MainType<number, string>) => {
         return `${obj.value1} - ${obj.value2}`
     }
 
     //  Multi types array
-    let scores: (string|number)[] = [399, 'Hi dear', 'How are you', 999];
+    let scores: (string | number)[] = [399, 'Hi dear', 'How are you', 999];
 
     // Tuple Types
     let skills: [string, number, boolean];
     skills = ['33', 99, false];
 
     // enum
-    enum constantsValue { Jan, Feb, Mar, Apr, May, Jun, Jul};
+    enum constantsValue { Jan, Feb, Mar, Apr, May, Jun, Jul };
 
     // any type
-    let anyType: any; anyType = {a: '3333', b: 999};
+    let anyType: any; anyType = { a: '3333', b: 999 };
 
     // void type
     let useless: void; useless = undefined;
 
 
+    // never type
+    function throwErrorMessage(message: string): never {
+        throw new Error(message);
+    }
+    let loop = function forever() {
+        while (true) {
+            console.log('Hello');
+        }
+    }
+
+
+
     return (
         <div>
-            {person.show()} - {display({value1: 999, value2: 'Hi'})} - {scores[1]} - {skills[1]} <br/>
-            {constantsValue.May} {constantsValue.Jul} 
+            {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
+            {constantsValue.May} {constantsValue.Jul}
         </div>
     );
 }
