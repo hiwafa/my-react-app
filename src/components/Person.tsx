@@ -96,7 +96,7 @@ export default () => {
 
     // TypeScript Function Types
     let add: (x: number, y?: number) => number;
-    add = (a, b)=> {
+    add = (a, b=10)=> {
         if (b !== undefined)
             return a+b;
 
