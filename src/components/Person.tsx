@@ -95,15 +95,18 @@ export default () => {
 
 
     // TypeScript Function Types
-    let add: (x: number, y: number) => number;
+    let add: (x: number, y?: number) => number;
     add = (a, b)=> {
-        return a+b;
+        if (b !== undefined)
+            return a+b;
+
+        return a;
     }
     
     return (
         <div>
             {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
-            {constantsValue.May} {constantsValue.Jul} - {add(9, 99)}
+            {constantsValue.May} {constantsValue.Jul} - {add(9, 100)}
         </div>
     );
 }
