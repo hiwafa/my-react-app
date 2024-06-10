@@ -89,13 +89,21 @@ export default () => {
 
 
     // TypeScript String Literal Types
-    type literalType = 'Wafa';
+    type literalType = 'Wafa' | 'Vafa';
     let wfa: literalType = 'Wafa';
+
+
+
+    // TypeScript Function Types
+    let add: (x: number, y: number) => number;
+    add = (a, b)=> {
+        return a+b;
+    }
     
     return (
         <div>
             {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
-            {constantsValue.May} {constantsValue.Jul}
+            {constantsValue.May} {constantsValue.Jul} - {add(9, 99)}
         </div>
     );
 }
