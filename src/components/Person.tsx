@@ -83,6 +83,10 @@ export default () => {
     // unionType = undefined; // error
 
 
+    // TypeScript Type Aliases
+    type aliasType = string | number;
+    let phone: aliasType = "93939944";
+    
     return (
         <div>
             {person.show()} - {display({ value1: 999, value2: 'Hi' })} - {scores[1]} - {skills[1]} <br />
