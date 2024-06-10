@@ -86,6 +86,11 @@ export default () => {
     // TypeScript Type Aliases
     type aliasType = string | number;
     let phone: aliasType = "93939944";
+
+
+    // TypeScript String Literal Types
+    type literalType = 'Wafa';
+    let wfa: literalType = 'Wafa';
     
     return (
         <div>
